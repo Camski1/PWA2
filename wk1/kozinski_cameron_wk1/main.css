@@ -173,7 +173,6 @@ h1{
 }
 
 .ctamid{
-	margin: 0px 27.5px;
 	display: inline-block;
 }
 
@@ -192,7 +191,7 @@ h1{
 .ctamid p{
 	font-size: 26px;
 	margin: 0px 47px;
-	padding: 29px 0px;
+	padding: 10px 0px;
 	color: white;
 }
 
@@ -275,21 +274,6 @@ footer{
 .add_task p{
 	font-size: 20px;
 	margin: 20px 13px;
-}
-
-.add{
-	height: 50px;
-	width: 50px;
-	clear: both;
-	float: left;
-	background-color: black;
-	border-radius: 90px;
-	margin: 5px 860px;;
-}
-
-.add h1{
-	margin: -5px 12px;
-	font-size: 40px;
 }
 
 .two{
