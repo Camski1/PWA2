@@ -16,37 +16,51 @@
 			<div class="nav">
 				<div class="navbar">
 					<ul>
-						<li><a href="home.html">Home</a></li>
+						<li><a class="currentLink" href="home.html">Home</a></li>
 						<li><a href="task.html">Tasks</a></li>
-						<li><a class="currentLink" href="account.html">Account</a></li>
+						<li><a href="account.html">Account</a></li>
 						<li class="right_nav"><a href="about.html">About</a></li>
 						<li><a href="tips.html">Tips &amp; Tricks</a></li>
 						<li><a href="sign-in.html">Sign-Up</a></li>
 					</ul>
 				</div>
-				<img class="einstien" src="img/einstien.png">
+				<img class="einstien eihome" src="img/einstien.png">
 			</div>
 			<div class="cta">
-				<h1>Change account</h1>
-				<form>
-				<label for="password">Old Password:</label>
-				<input id="password" type="password" name="password" placeholder="Password" required><br>
-
-				<label for="Username">New Username:</label>
-				<input id="Username" type="text" name="Username" placeholder="Username" required><br>
-
-				<label for="password">New Password:</label>
-				<input id="password" type="password" name="password" placeholder="Password" required><br>
-
-				<label for="re-password">Re-Password:</label>
-				<input id="re-password" type="password" name="re-password" placeholder="Re-enter password" required><br>
-
-				<label for="email">New Email:</label>
-				<input id="email" type="email" name="email" placeholder="TodG@gmail.com" required><br>
-				<input type="submit">
-				</form>
+				<ul>
+					<li>PlanckTime.com is...</li>
+					<li>Easy</li>
+					<li>Fun</li>
+					<li>Helpful</li>
+					<li>Free</li>
+				</ul>
+				<img src="img/cta.png">
+				<p>Quick and easy <br>
+					start now!</p>
+				<a href="task.html"><div class="cta-signup">
+					<p>Start</p>
+				</div></a>
 			</div>
+			<div class="sub-cta">
+				<a href="tips.html"><div class="tips ctaleft">
+					<p>Tips &amp; Tricks</p>
+					<img class="worm" src="img/worm.png">
+				</div></a>
+				<div class="tips ctamid">
+					<p>Want to learn<br>about us?</p>
+					<a href="about.html"><div>
+						<p>Learn More</p>
+					</div></a>
+				</div>
 			
+				<a href="task.html"><div class="tips ctaright">
+					<div>
+						<p>Start a Project</p>
+						<img src="img/cta_small.png">
+					</div>
+				</div></a>
+			</div>
+		</div>
 		<footer>
 			<div class="foot">
 				<ul class="fleft">
@@ -58,11 +72,10 @@
 				<ul class="fmid">
 					<li><a href="about.html">About</a></li>
 				</ul>
-				<ul class="fright">
-					<li><a href="sign-in.html">Sign-Up</a></li>
-				</ul>
 			</div>
 		</footer>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
 	</body>
 
 </html>
