@@ -370,7 +370,7 @@ text-decoration: none;
 padding:10px;
 }
 
-input    {
+input{
 width:275px;
 display:block;
 border: 1px solid #999;
@@ -493,7 +493,7 @@ height: 25px;
 #popup{
 	display: none;
 	position: absolute;
-	height: 430px;
+	height: 460px;
 	width: 300px;
 	margin: 90px 560px;
 	box-shadow: 0, 0, 0, 7px #2B448C;
@@ -549,7 +549,7 @@ background-color: #e5eecc;
 }
 
 input[type=radio] {
-    display:none; 
+
     margin:10px;
 }
 
@@ -572,9 +572,6 @@ input[type=radio]:checked  img{
 	font-size: 12px;
 }
 
-#popup [type="radio"]:checked { 
-    background-color:pink;
-}
 
 
 
