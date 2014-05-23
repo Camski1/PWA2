@@ -31,18 +31,13 @@
 			<div id="accordion">
   				<h3 class="tabs1">Assignments</h3>
   				<div class="hide1">
-    				<div class="work one">
-						<div class="add_task" >
-							<p>WPF2</p>
-						</div>
-					<div class="urgency">
-						<img src="img/glass.png">
-						<h2>Low</h2>
-					</div>
-					<div class="delete">
-						<h1>Delete</h1>
-					</div>
+    				<div id="projectlist">
+    					<div class="projects">
+
+    					</div>
+     			    </div>
      			</div>
+
   			</div>
   			<h3 class="tabs2">Tests</h3>
   			<div class="hide2">
@@ -93,16 +88,16 @@
 	 	<h2>Add a task!</h2>
 	 	<form>
 	 		<label for="projname">Project Name:</label>
-				<input id="projname" type="text" name="projname" placeholder="Project Name" required><br>
+				<input id="projectName" type="text" name="projname" placeholder="Project Name" required><br>
 
 				<label for="coms">What do you need to do?</label><br>
-				<textarea id="coms" rows="2" cols="36"></textarea>
+				<textarea id="projectDescription" rows="2" cols="36"></textarea>
 				<label for="date">When is the projects due date?</label>
-				<input id="date" type="date" name="bday">
+				<input id="projectDueDate" type="date" name="bday">
 				<label>Urgency</label>
 				<ul><li>
 				<label class="popStat">
-				<input type="radio" name="status" id="high"><img src="img/high.png" width="30">
+				<input class="popStat" type="radio" name="status" id="high"><img src="img/high.png" width="30">
 				</label></li>
 				<li><label class="popStat"><input type="radio" name="status" id="med"><img src="img/med.png" width="30">
 				</label></li>
@@ -111,7 +106,7 @@
 				<li><label class="popStat"><input type="radio" name="status" id="complete"><img src="img/comp.png" width="30">
 				</label></li>
 				</ul>
-				<input class="addTsk" type="submit" value="Done">
+				<input id="addButton" class="addTsk" type="button" value="Done">
 	 	</form>
 	   </div>
 	 </div>

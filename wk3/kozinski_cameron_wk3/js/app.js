@@ -1,4 +1,5 @@
 (function($){
+
   /*login*/
   $('#signinButton').click(function(){
     var user = $('#user').val();
@@ -28,13 +29,151 @@
 $('#logOut').click(function(e){
   e.preventDefault;
   $.get('xhr/logout.php', function(){
-    window.location.assign('index.html')
+    window.location.assign('index.html');
   })
 });
 
 
  /*register*/
+$('#register').on('click', function(){
+  var username = $('#username').val(),
+      password = $('#password').val(),
+      repass = $('#re-password').val(),
+      email = $('#email').val();
+  console.log(username+''+password+''+email);
 
+  $.ajax({
+    url:'xhr/register.php',
+    type:'post',
+    dataType:'json',
+    data:{
+      username: username,
+      password: password,
+      email: email
+    },
+    success: function(responce){
+      if(responce.error){
+        alert(responce.error);
+      }else{
+        window.location.assign('home.html');
+      }
+    }
+  });
+});
+
+/*buttons*/
+  $('.home').on('click', function(e) {
+  e.preventDefault();
+  window.location.assign('home.html');
+});
+
+$('.task').on('click', function(e){
+  e.preventDefault();
+  window.location.assign('task.html');
+});
+
+$('.account').on('click', function(e){
+  e.preventDefault();
+  window.location.assign('account.html');
+});
+
+$('.about').on('click', function(e){
+  e.preventDefault();
+  window.location.assign('about.html');
+});
+
+$('.tips').on('click', function(e){
+  e.preventDefault();
+  window.location.assign('tips.html');
+});
+
+/*username display*/
+
+$.getJSON('xhr/check_login.php', function(data){
+  $.each(data, function(key, val){
+    $('#userDisplay').html('Welcom: ' +val.user_n);
+  })
+});
+
+/*Add New Project*/
+$('#addButton').on('click', function(e){
+  e.preventDefault();
+  var projName = $('#projectName').val(),
+  projDesc = $('#projectDescription').val(),
+  projDue = $('#projectDueDate').val(),
+  status = $('input[name = "status"]:checked').prop("id");
+
+  $.ajax({
+    url: "xhr/new_project.php",
+    type: "post",
+    dataType: "json",
+    data:{
+      projectName: projName,
+      projectDescription: projDesc,
+      dueDate: projDue,
+      status: status
+    },
+    success:function(response){
+      console.log(projName+" "+projDesc+" "+projDue+" "+status);
+      if(response.error){
+        alert(response.error);
+      }else{
+        window.location.assign("task.html");
+      };
+    }
+  });
+});
+
+/*Get Project*/
+
+var projects = function(){
+  $.ajax({
+    url:'xhr/get_projects.php',
+    type:'get',
+    dataTyoe:'json',
+    success:function(response){
+      if(response.error){
+        console.log(response.error);
+      }else{
+        console.log("this is the");
+        for(var i=0, j=response.projects.length; i<j; i++){
+          var result = response.projects[i];
+
+          $(".projects").append(
+            '<div style="border:1px solid black">'+
+            "Project ID: "+result.id +"<br>"+
+            "Project Name: "+result.projectName+"<br>"+
+            "Project Description: "+result.projectDescription+"<br>"+
+            '<button class="deletebtn">Delete</button>'+
+            '</div> <br>'
+            );
+        };
+        $('.deletebtn').on('click', function(e){
+          console.log("test delete");
+          $.ajax({
+            url:'xhr/delete_project.php',
+            data:{
+              projectID: result.id
+            },
+            type:'POST',
+            dataType:'json',
+            success: function(response){
+              console.log("test success");
+
+              if(response.error){
+                alert(response.error);
+              }else{
+                window.location.assign("task.html");
+              };
+            }
+          });
+        });
+      }
+    }
+  });
+};
+
+projects();
 
 /*tooltips*/
 $(".masterTootip").hover(function(){
