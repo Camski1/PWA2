@@ -91,7 +91,7 @@ $('.tipps').on('click', function(e){
 
 $.getJSON('xhr/check_login.php', function(data){
   $.each(data, function(key, val){
-    $('#userDisplay').html('Welcom: ' +val.user_n);
+    $('#userDisplay').html('Welcome: ' +val.user_n);
   })
 });
 
