@@ -82,7 +82,7 @@ $('.about').on('click', function(e){
   window.location.assign('about.html');
 });
 
-$('.tips').on('click', function(e){
+$('.tipps').on('click', function(e){
   e.preventDefault();
   window.location.assign('tips.html');
 });
