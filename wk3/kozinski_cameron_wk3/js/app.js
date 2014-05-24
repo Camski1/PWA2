@@ -13,10 +13,10 @@
           username: user,
           password: pass
         },
-        success:function(responce){
+        success:function(response){
           console.log("test user");
-          if(responce.error){
-            alert(responce.error);
+          if(response.error){
+            alert(response.error);
         }else{
           window.location.assign('home.html');
         };
@@ -51,9 +51,9 @@ $('#register').on('click', function(){
       password: password,
       email: email
     },
-    success: function(responce){
-      if(responce.error){
-        alert(responce.error);
+    success: function(response){
+      if(response.error){
+        alert(response.error);
       }else{
         window.location.assign('home.html');
       }
@@ -113,7 +113,7 @@ $('#addButton').on('click', function(e){
       dueDate: projDue,
       status: status
     },
-    success:function(response){
+    success: function (response){
       console.log(projName+" "+projDesc+" "+projDue+" "+status);
       if(response.error){
         alert(response.error);
@@ -130,22 +130,21 @@ var projects = function(){
   $.ajax({
     url:'xhr/get_projects.php',
     type:'get',
-    dataTyoe:'json',
-    success:function(response){
+    dataType:'json',
+    success: function(response){
       if(response.error){
         console.log(response.error);
       }else{
-        console.log("this is the");
-        for(var i=0, j=response.projects.length; i<j; i++){
+        console.log("this is the"+response);
+        for(var i = 0, j = response.projects.length; i < j; i++){
           var result = response.projects[i];
 
           $(".projects").append(
-            '<div style="border:1px solid black">'+
-            "Project ID: "+result.id +"<br>"+
-            "Project Name: "+result.projectName+"<br>"+
-            "Project Description: "+result.projectDescription+"<br>"+
-            '<button class="deletebtn">Delete</button>'+
-            '</div> <br>'
+            '<div class="work">' +
+              '<div class="add_task"><p>' +  result.id + '<br>' + result.projectName + "</p></div>" +
+              "Project Description: " + result.projectDescription + "<br>" +
+              '<button class="delete deletebtn">Delete</button>' +
+              '</div>'
             );
         };
         $('.deletebtn').on('click', function(e){
@@ -172,8 +171,8 @@ var projects = function(){
     }
   });
 };
+projects()
 
-projects();
 
 /*tooltips*/
 $(".masterTootip").hover(function(){

@@ -280,7 +280,7 @@ footer{
 
 .add_task p{
 	font-size: 20px;
-	margin: 20px 13px;
+	margin: 15px 25px;
 }
 
 .add{
@@ -344,7 +344,7 @@ footer{
 	width: 60px;
 	background-color: #A0E3F2;
 	float: right;
-	margin: -76px 30px;
+	margin: 15px 30px;
 }
 
 .delete h1{
@@ -465,7 +465,6 @@ height: 25px;
 	width: 945px;
 	background-color: lightblue;
 	margin-top: 13px;
-
 }
 
  .hide1 ,.hide2, .hide3{
